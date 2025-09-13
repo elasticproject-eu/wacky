@@ -1,3 +1,6 @@
+#![allow(elided_lifetimes_in_paths)]
+#![allow(redundant_lifetimes)]
+#![allow(mismatched_lifetime_syntaxes)]
 use crate::{
     CoreExtern, CoreFuncType, DefinedType, Enum, Flags, FuncType, FuncTypeId, Interface,
     InterfaceId, ItemKind, ModuleType, ModuleTypeId, Record, Resource, ResourceAlias, ResourceId,

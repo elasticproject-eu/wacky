@@ -1,5 +1,7 @@
 //! Module for the AST implementation.
-
+#![allow(elided_lifetimes_in_paths)]
+#![allow(redundant_lifetimes)]
+#![allow(mismatched_lifetime_syntaxes)]
 use crate::{
     lexer::{self, Lexer, LexerResult, Token},
     resolution::{AstResolver, Resolution, ResolutionResult},

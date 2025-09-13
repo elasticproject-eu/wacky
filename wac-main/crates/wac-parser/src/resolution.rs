@@ -1,5 +1,7 @@
 //! Module for resolving WAC ASTs.
-
+#![allow(elided_lifetimes_in_paths)]
+#![allow(redundant_lifetimes)]
+#![allow(mismatched_lifetime_syntaxes)]
 use crate::{ast, Document};
 use indexmap::{IndexMap, IndexSet};
 use miette::{Diagnostic, SourceSpan};

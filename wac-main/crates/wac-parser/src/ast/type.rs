@@ -1,3 +1,6 @@
+#![allow(elided_lifetimes_in_paths)]
+#![allow(redundant_lifetimes)]
+#![allow(mismatched_lifetime_syntaxes)]
 use super::{
     parse_delimited, parse_optional, parse_token, DocComment, Error, Ident, Lookahead, PackagePath,
     Parse, ParseResult, Peek,

@@ -1,5 +1,7 @@
 //! Module for printing WAC documents.
-
+#![allow(elided_lifetimes_in_paths)]
+#![allow(redundant_lifetimes)]
+#![allow(mismatched_lifetime_syntaxes)]
 use crate::ast::*;
 use std::fmt::Write;
 
@@ -646,7 +648,7 @@ impl<'a, W: Write> DocumentPrinter<'a, W> {
     pub fn let_statement(&mut self, stmt: &LetStatement) -> std::fmt::Result {
         self.docs(&stmt.docs)?;
         self.indent()?;
-        write!(self.writer, "let {id} = ", id = self.source(stmt.id.span))?;
+        write!(self.writer, "let {id} = ", id = stmt.id.string)?;
         self.expr(&stmt.expr)?;
         write!(self.writer, ";")
     }
@@ -670,17 +672,13 @@ impl<'a, W: Write> DocumentPrinter<'a, W> {
                 self.expr(&e.inner)?;
                 write!(self.writer, ")")
             }
-            PrimaryExpr::Ident(id) => write!(self.writer, "{id}", id = self.source(id.span)),
+            PrimaryExpr::Ident(id) => write!(self.writer, "{id}", id = id.string),
         }
     }
 
     /// Prints the given new expression.
     pub fn new_expr(&mut self, expr: &NewExpr) -> std::fmt::Result {
-        write!(
-            self.writer,
-            "new {name} {{",
-            name = self.source(expr.package.span)
-        )?;
+        write!(self.writer, "new {name} {{", name = expr.package.string,)?;
 
         if expr.arguments.is_empty() {
             write!(self.writer, "}}")?;
@@ -702,18 +700,18 @@ impl<'a, W: Write> DocumentPrinter<'a, W> {
 
             match arg {
                 InstantiationArgument::Inferred(id) => {
-                    write!(self.writer, "{id},", id = self.source(id.span))?
+                    write!(self.writer, "{id},", id = id.string)?
                 }
                 InstantiationArgument::Spread(id) => {
-                    write!(self.writer, "...{id},", id = self.source(id.span))?
+                    write!(self.writer, "...{id},", id = id.string)?
                 }
                 InstantiationArgument::Named(arg) => {
                     match &arg.name {
                         InstantiationArgumentName::Ident(id) => {
-                            write!(self.writer, "{id}: ", id = self.source(id.span))?;
+                            write!(self.writer, "{id}: ", id = id.string)?;
                         }
                         InstantiationArgumentName::String(s) => {
-                            write!(self.writer, "{s}: ", s = self.source(s.span))?;
+                            write!(self.writer, "{s}: ", s = s.value)?;
                         }
                     }
                     self.expr(&arg.expr)?;
@@ -740,16 +738,12 @@ impl<'a, W: Write> DocumentPrinter<'a, W> {
 
     /// Prints the given access expression.
     pub fn access_expr(&mut self, expr: &AccessExpr) -> std::fmt::Result {
-        write!(self.writer, ".{id}", id = self.source(expr.id.span))
+        write!(self.writer, ".{id}", id = expr.id.string)
     }
 
     /// Prints the given named access expression.
     pub fn named_access_expr(&mut self, expr: &NamedAccessExpr) -> std::fmt::Result {
-        write!(
-            self.writer,
-            "[{name}]",
-            name = self.source(expr.string.span)
-        )
+        write!(self.writer, "{:?}", expr.string)
     }
 
     /// Prints the given export statement.

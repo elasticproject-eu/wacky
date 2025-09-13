@@ -1,3 +1,6 @@
+#![allow(elided_lifetimes_in_paths)]
+#![allow(redundant_lifetimes)]
+#![allow(mismatched_lifetime_syntaxes)]
 use crate::PackageId;
 use indexmap::IndexMap;
 use petgraph::graph::NodeIndex;
