@@ -1,0 +1,10 @@
+failed to resolve document
+
+  × `x` (u32) is not an interface
+   ╭─[tests/resolution/fail/invalid-use.wac:6:9]
+ 5 │ interface a {
+ 6 │     use x.{a};
+   ·         ┬
+   ·         ╰── `x` is not an interface
+ 7 │ }
+   ╰────

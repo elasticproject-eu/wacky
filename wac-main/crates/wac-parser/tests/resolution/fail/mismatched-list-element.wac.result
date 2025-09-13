@@ -1,0 +1,13 @@
+failed to resolve document
+
+  × mismatched instantiation argument `x`
+  ├─▶ mismatched type for export `f`
+  ├─▶ mismatched type for function parameter `l`
+  ├─▶ mismatched type for list element
+  ╰─▶ expected u8, found string
+   ╭─[tests/resolution/fail/mismatched-list-element.wac:7:23]
+ 6 │ 
+ 7 │ let i = new foo:bar { x };
+   ·                       ┬
+   ·                       ╰── mismatched argument `x`
+   ╰────

@@ -1,0 +1,3 @@
+digraph {
+    0 [ label = "instantiation of package \"foo:bar\""; kind = "instance"; export = "i"]
+}

@@ -1,0 +1,5 @@
+package test:comp;
+
+import f: func();
+export f as "x";
+export f as "x";

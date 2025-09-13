@@ -1,0 +1,5 @@
+digraph {
+    0 [ label = "type definition \"a2\""; kind = "u32"; export = "a2"]
+    1 [ label = "type definition \"b2\""; kind = "string"; export = "b2"]
+    2 [ label = "type definition \"c2\""; kind = "function type"; export = "c2"]
+}

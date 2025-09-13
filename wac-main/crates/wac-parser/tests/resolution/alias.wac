@@ -1,0 +1,11 @@
+package test:comp@1.0.0;
+
+type a = u32;
+
+type b = string;
+
+type c = func();
+
+export a as "a2";
+export b as "b2";
+export c as "c2";

@@ -1,0 +1,3 @@
+package test:comp;
+
+import x as "NOT-VALID-NAME!": func();

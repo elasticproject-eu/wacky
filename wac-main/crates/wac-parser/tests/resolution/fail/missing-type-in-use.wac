@@ -1,0 +1,9 @@
+package test:comp;
+
+interface a {
+
+}
+
+interface b {
+    use a.{x};
+}

@@ -1,0 +1,286 @@
+{
+  "docs": [],
+  "directive": {
+    "package": {
+      "string": "test:comp",
+      "name": "test:comp",
+      "version": null,
+      "span": {
+        "offset": 8,
+        "length": 9
+      }
+    }
+  },
+  "statements": [
+    {
+      "Import": {
+        "docs": [
+          {
+            "comment": "Import by func type",
+            "span": {
+              "offset": 20,
+              "length": 23
+            }
+          }
+        ],
+        "id": {
+          "string": "a",
+          "span": {
+            "offset": 51,
+            "length": 1
+          }
+        },
+        "name": null,
+        "ty": {
+          "func": {
+            "params": [],
+            "results": "empty"
+          }
+        }
+      }
+    },
+    {
+      "Import": {
+        "docs": [
+          {
+            "comment": "Import by ident",
+            "span": {
+              "offset": 63,
+              "length": 19
+            }
+          }
+        ],
+        "id": {
+          "string": "b",
+          "span": {
+            "offset": 90,
+            "length": 1
+          }
+        },
+        "name": null,
+        "ty": {
+          "ident": {
+            "string": "x",
+            "span": {
+              "offset": 93,
+              "length": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "Import": {
+        "docs": [
+          {
+            "comment": "Import by package path",
+            "span": {
+              "offset": 97,
+              "length": 26
+            }
+          }
+        ],
+        "id": {
+          "string": "c",
+          "span": {
+            "offset": 131,
+            "length": 1
+          }
+        },
+        "name": null,
+        "ty": {
+          "package": {
+            "span": {
+              "offset": 134,
+              "length": 11
+            },
+            "string": "foo:bar/baz",
+            "name": "foo:bar",
+            "segments": "baz",
+            "version": null
+          }
+        }
+      }
+    },
+    {
+      "Import": {
+        "docs": [
+          {
+            "comment": "Import by func type with kebab name string",
+            "span": {
+              "offset": 148,
+              "length": 46
+            }
+          }
+        ],
+        "id": {
+          "string": "d",
+          "span": {
+            "offset": 202,
+            "length": 1
+          }
+        },
+        "name": {
+          "string": {
+            "value": "hello-world",
+            "span": {
+              "offset": 207,
+              "length": 13
+            }
+          }
+        },
+        "ty": {
+          "func": {
+            "params": [
+              {
+                "id": {
+                  "string": "name",
+                  "span": {
+                    "offset": 227,
+                    "length": 4
+                  }
+                },
+                "ty": {
+                  "string": {
+                    "offset": 233,
+                    "length": 6
+                  }
+                }
+              }
+            ],
+            "results": "empty"
+          }
+        }
+      }
+    },
+    {
+      "Import": {
+        "docs": [
+          {
+            "comment": "Import by inline interface",
+            "span": {
+              "offset": 243,
+              "length": 30
+            }
+          }
+        ],
+        "id": {
+          "string": "e",
+          "span": {
+            "offset": 281,
+            "length": 1
+          }
+        },
+        "name": null,
+        "ty": {
+          "interface": {
+            "items": [
+              {
+                "export": {
+                  "docs": [],
+                  "id": {
+                    "string": "x",
+                    "span": {
+                      "offset": 300,
+                      "length": 1
+                    }
+                  },
+                  "ty": {
+                    "func": {
+                      "params": [],
+                      "results": "empty"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Import": {
+        "docs": [
+          {
+            "comment": "Import by package path with version",
+            "span": {
+              "offset": 315,
+              "length": 39
+            }
+          }
+        ],
+        "id": {
+          "string": "f",
+          "span": {
+            "offset": 362,
+            "length": 1
+          }
+        },
+        "name": null,
+        "ty": {
+          "package": {
+            "span": {
+              "offset": 365,
+              "length": 17
+            },
+            "string": "foo:bar/baz@1.0.0",
+            "name": "foo:bar",
+            "segments": "baz",
+            "version": "1.0.0"
+          }
+        }
+      }
+    },
+    {
+      "Import": {
+        "docs": [
+          {
+            "comment": "Import by func type with kebab name identifier",
+            "span": {
+              "offset": 385,
+              "length": 50
+            }
+          }
+        ],
+        "id": {
+          "string": "g",
+          "span": {
+            "offset": 443,
+            "length": 1
+          }
+        },
+        "name": {
+          "ident": {
+            "string": "hello-world",
+            "span": {
+              "offset": 448,
+              "length": 11
+            }
+          }
+        },
+        "ty": {
+          "func": {
+            "params": [
+              {
+                "id": {
+                  "string": "name",
+                  "span": {
+                    "offset": 466,
+                    "length": 4
+                  }
+                },
+                "ty": {
+                  "string": {
+                    "offset": 472,
+                    "length": 6
+                  }
+                }
+              }
+            ],
+            "results": "empty"
+          }
+        }
+      }
+    }
+  ]
+}

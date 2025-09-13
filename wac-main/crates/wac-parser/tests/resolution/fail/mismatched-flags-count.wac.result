@@ -1,0 +1,11 @@
+failed to resolve document
+
+  × mismatched instantiation argument `x`
+  ├─▶ mismatched type for export `f`
+  ╰─▶ expected a flags type flag count of 3, found a count of 4
+    ╭─[tests/resolution/fail/mismatched-flags-count.wac:12:23]
+ 11 │ 
+ 12 │ let i = new foo:bar { x };
+    ·                       ┬
+    ·                       ╰── mismatched argument `x`
+    ╰────

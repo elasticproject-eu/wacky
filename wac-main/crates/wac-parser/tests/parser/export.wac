@@ -1,0 +1,19 @@
+package test:comp;
+
+/// Export an item (default name)
+export e;
+
+/// Export an alias of an item (default name)
+export e["foo"];
+
+/// Export an alias of an item with a different name with string
+export e["foo"] as "bar";
+
+/// Export an alias of an item with a different name with identifier
+export e["foo"] as foo-bar;
+
+/// Export of an instance spread
+export i...;
+
+/// Export of an expression spread
+export new foo:bar { ... } ...;

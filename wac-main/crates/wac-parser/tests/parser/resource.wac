@@ -1,0 +1,43 @@
+package test:comp;
+
+interface foo {
+    /// Resource without methods
+    resource r1;
+
+    /// Resource with only constructor
+    resource r2 {
+        /// Constructor
+        constructor();
+    }
+
+    /// Resource with constructor, instance method, and static method
+    resource r3 {
+        /// Constructor
+        constructor(a: u32);
+        /// Method
+        a: func(b: u32);
+        /// Static method
+        b: static func(c: u32);
+    }
+}
+
+world bar {
+    /// Resource without methods
+    resource r1;
+
+    /// Resource with only constructor
+    resource r2 {
+        /// Constructor
+        constructor();
+    }
+
+    /// Resource with constructor, instance method, and static method
+    resource r3 {
+        /// Constructor
+        constructor(a: u32);
+        /// Method
+        a: func(b: u32);
+        /// Static method
+        b: static func(c: u32);
+    }
+}

@@ -1,0 +1,8 @@
+package test:comp;
+
+enum e {
+    a,
+    b,
+    c,
+    b,
+}

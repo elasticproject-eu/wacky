@@ -1,0 +1,8 @@
+digraph {
+    0 [ label = "import \"a\""; kind = "function"]
+    1 [ label = "type definition \"x\""; kind = "function type"; export = "x"]
+    2 [ label = "import \"b\""; kind = "function"]
+    3 [ label = "import \"hello-world\""; kind = "function"; export = "hello-world"]
+    4 [ label = "import \"e\""; kind = "instance"; export = "e"]
+    5 [ label = "import \"foo:bar/baz\""; kind = "instance"; export = "foo:bar/baz"]
+}

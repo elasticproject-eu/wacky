@@ -1,0 +1,12 @@
+package test:comp;
+
+import x: interface {
+    flags f {
+        a,
+        b,
+        c,
+        d,
+    }
+};
+
+let i = new foo:bar { x };

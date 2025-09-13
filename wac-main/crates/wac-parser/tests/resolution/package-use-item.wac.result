@@ -1,0 +1,4 @@
+digraph {
+    0 [ label = "type definition \"i\""; kind = "interface"; export = "i"]
+    1 [ label = "type definition \"w\""; kind = "world"; export = "w"]
+}

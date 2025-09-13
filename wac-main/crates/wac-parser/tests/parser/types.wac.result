@@ -1,0 +1,1016 @@
+{
+  "docs": [],
+  "directive": {
+    "package": {
+      "string": "test:comp",
+      "name": "test:comp",
+      "version": null,
+      "span": {
+        "offset": 8,
+        "length": 9
+      }
+    }
+  },
+  "statements": [
+    {
+      "Type": {
+        "interface": {
+          "docs": [
+            {
+              "comment": "Defining an interface",
+              "span": {
+                "offset": 20,
+                "length": 25
+              }
+            }
+          ],
+          "id": {
+            "string": "i",
+            "span": {
+              "offset": 56,
+              "length": 1
+            }
+          },
+          "items": [
+            {
+              "type": {
+                "resource": {
+                  "docs": [
+                    {
+                      "comment": "Defining a resource",
+                      "span": {
+                        "offset": 64,
+                        "length": 23
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "res",
+                    "span": {
+                      "offset": 101,
+                      "length": 3
+                    }
+                  },
+                  "methods": [
+                    {
+                      "constructor": {
+                        "docs": [],
+                        "span": {
+                          "offset": 115,
+                          "length": 11
+                        },
+                        "params": []
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": {
+                "alias": {
+                  "docs": [
+                    {
+                      "comment": "Type alias a",
+                      "span": {
+                        "offset": 141,
+                        "length": 16
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "a",
+                    "span": {
+                      "offset": 167,
+                      "length": 1
+                    }
+                  },
+                  "kind": {
+                    "func": {
+                      "params": [],
+                      "results": "empty"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "record": {
+                  "docs": [
+                    {
+                      "comment": "Record type",
+                      "span": {
+                        "offset": 183,
+                        "length": 15
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "r",
+                    "span": {
+                      "offset": 210,
+                      "length": 1
+                    }
+                  },
+                  "fields": [
+                    {
+                      "docs": [],
+                      "id": {
+                        "string": "x",
+                        "span": {
+                          "offset": 222,
+                          "length": 1
+                        }
+                      },
+                      "ty": {
+                        "u32": {
+                          "offset": 225,
+                          "length": 3
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "export": {
+                "docs": [
+                  {
+                    "comment": "Export func",
+                    "span": {
+                      "offset": 239,
+                      "length": 15
+                    }
+                  }
+                ],
+                "id": {
+                  "string": "x",
+                  "span": {
+                    "offset": 259,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "func": {
+                    "params": [],
+                    "results": "empty"
+                  }
+                }
+              }
+            },
+            {
+              "export": {
+                "docs": [
+                  {
+                    "comment": "Export func of type a",
+                    "span": {
+                      "offset": 274,
+                      "length": 25
+                    }
+                  }
+                ],
+                "id": {
+                  "string": "y",
+                  "span": {
+                    "offset": 304,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "ident": {
+                    "string": "a",
+                    "span": {
+                      "offset": 307,
+                      "length": 1
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Type": {
+        "interface": {
+          "docs": [
+            {
+              "comment": "Defining a second interface",
+              "span": {
+                "offset": 313,
+                "length": 31
+              }
+            }
+          ],
+          "id": {
+            "string": "i2",
+            "span": {
+              "offset": 355,
+              "length": 2
+            }
+          },
+          "items": [
+            {
+              "use": {
+                "docs": [
+                  {
+                    "comment": "Use type r from i",
+                    "span": {
+                      "offset": 364,
+                      "length": 21
+                    }
+                  }
+                ],
+                "path": {
+                  "ident": {
+                    "string": "i",
+                    "span": {
+                      "offset": 394,
+                      "length": 1
+                    }
+                  }
+                },
+                "items": [
+                  {
+                    "id": {
+                      "string": "r",
+                      "span": {
+                        "offset": 397,
+                        "length": 1
+                      }
+                    },
+                    "asId": null
+                  }
+                ]
+              }
+            },
+            {
+              "use": {
+                "docs": [
+                  {
+                    "comment": "Use type r from i with alias z",
+                    "span": {
+                      "offset": 406,
+                      "length": 34
+                    }
+                  }
+                ],
+                "path": {
+                  "ident": {
+                    "string": "i",
+                    "span": {
+                      "offset": 449,
+                      "length": 1
+                    }
+                  }
+                },
+                "items": [
+                  {
+                    "id": {
+                      "string": "r",
+                      "span": {
+                        "offset": 452,
+                        "length": 1
+                      }
+                    },
+                    "asId": {
+                      "string": "z",
+                      "span": {
+                        "offset": 457,
+                        "length": 1
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Type": {
+        "world": {
+          "docs": [
+            {
+              "comment": "Defining a world",
+              "span": {
+                "offset": 464,
+                "length": 20
+              }
+            }
+          ],
+          "id": {
+            "string": "w1",
+            "span": {
+              "offset": 491,
+              "length": 2
+            }
+          },
+          "items": [
+            {
+              "use": {
+                "docs": [
+                  {
+                    "comment": "Use type r from foo:bar/i",
+                    "span": {
+                      "offset": 500,
+                      "length": 29
+                    }
+                  }
+                ],
+                "path": {
+                  "package": {
+                    "span": {
+                      "offset": 538,
+                      "length": 9
+                    },
+                    "string": "foo:bar/i",
+                    "name": "foo:bar",
+                    "segments": "i",
+                    "version": null
+                  }
+                },
+                "items": [
+                  {
+                    "id": {
+                      "string": "r",
+                      "span": {
+                        "offset": 549,
+                        "length": 1
+                      }
+                    },
+                    "asId": null
+                  }
+                ]
+              }
+            },
+            {
+              "import": {
+                "docs": [
+                  {
+                    "comment": "Import a function",
+                    "span": {
+                      "offset": 558,
+                      "length": 21
+                    }
+                  }
+                ],
+                "path": {
+                  "named": {
+                    "id": {
+                      "string": "a",
+                      "span": {
+                        "offset": 591,
+                        "length": 1
+                      }
+                    },
+                    "ty": {
+                      "func": {
+                        "params": [],
+                        "results": "empty"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "import": {
+                "docs": [
+                  {
+                    "comment": "Import an interface",
+                    "span": {
+                      "offset": 606,
+                      "length": 23
+                    }
+                  }
+                ],
+                "path": {
+                  "ident": {
+                    "string": "i",
+                    "span": {
+                      "offset": 641,
+                      "length": 1
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "import": {
+                "docs": [
+                  {
+                    "comment": "Import by name with type `c`",
+                    "span": {
+                      "offset": 648,
+                      "length": 32
+                    }
+                  }
+                ],
+                "path": {
+                  "named": {
+                    "id": {
+                      "string": "c",
+                      "span": {
+                        "offset": 692,
+                        "length": 1
+                      }
+                    },
+                    "ty": {
+                      "ident": {
+                        "string": "c",
+                        "span": {
+                          "offset": 695,
+                          "length": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "export": {
+                "docs": [
+                  {
+                    "comment": "Export an inline interface",
+                    "span": {
+                      "offset": 703,
+                      "length": 30
+                    }
+                  }
+                ],
+                "path": {
+                  "named": {
+                    "id": {
+                      "string": "d",
+                      "span": {
+                        "offset": 745,
+                        "length": 1
+                      }
+                    },
+                    "ty": {
+                      "interface": {
+                        "items": [
+                          {
+                            "export": {
+                              "docs": [],
+                              "id": {
+                                "string": "x",
+                                "span": {
+                                  "offset": 768,
+                                  "length": 1
+                                }
+                              },
+                              "ty": {
+                                "func": {
+                                  "params": [],
+                                  "results": "empty"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "export": {
+                "docs": [
+                  {
+                    "comment": "Export an interface",
+                    "span": {
+                      "offset": 790,
+                      "length": 23
+                    }
+                  }
+                ],
+                "path": {
+                  "ident": {
+                    "string": "i2",
+                    "span": {
+                      "offset": 825,
+                      "length": 2
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "export": {
+                "docs": [
+                  {
+                    "comment": "Export by name with type `f`",
+                    "span": {
+                      "offset": 833,
+                      "length": 32
+                    }
+                  }
+                ],
+                "path": {
+                  "named": {
+                    "id": {
+                      "string": "f",
+                      "span": {
+                        "offset": 877,
+                        "length": 1
+                      }
+                    },
+                    "ty": {
+                      "ident": {
+                        "string": "f",
+                        "span": {
+                          "offset": 880,
+                          "length": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Type": {
+        "world": {
+          "docs": [
+            {
+              "comment": "Defining a second world",
+              "span": {
+                "offset": 886,
+                "length": 27
+              }
+            }
+          ],
+          "id": {
+            "string": "w2",
+            "span": {
+              "offset": 920,
+              "length": 2
+            }
+          },
+          "items": [
+            {
+              "include": {
+                "docs": [
+                  {
+                    "comment": "Include the first world",
+                    "span": {
+                      "offset": 929,
+                      "length": 27
+                    }
+                  }
+                ],
+                "world": {
+                  "ident": {
+                    "string": "w1",
+                    "span": {
+                      "offset": 969,
+                      "length": 2
+                    }
+                  }
+                },
+                "with": []
+              }
+            },
+            {
+              "include": {
+                "docs": [
+                  {
+                    "comment": "Include a world by path",
+                    "span": {
+                      "offset": 978,
+                      "length": 27
+                    }
+                  }
+                ],
+                "world": {
+                  "package": {
+                    "span": {
+                      "offset": 1018,
+                      "length": 11
+                    },
+                    "string": "foo:bar/baz",
+                    "name": "foo:bar",
+                    "segments": "baz",
+                    "version": null
+                  }
+                },
+                "with": []
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "variant": {
+            "docs": [
+              {
+                "comment": "Defining a variant",
+                "span": {
+                  "offset": 1034,
+                  "length": 22
+                }
+              }
+            ],
+            "id": {
+              "string": "v",
+              "span": {
+                "offset": 1065,
+                "length": 1
+              }
+            },
+            "cases": [
+              {
+                "docs": [],
+                "id": {
+                  "string": "a",
+                  "span": {
+                    "offset": 1073,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "ident": {
+                    "string": "x",
+                    "span": {
+                      "offset": 1075,
+                      "length": 1
+                    }
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "b",
+                  "span": {
+                    "offset": 1083,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "string": {
+                    "offset": 1085,
+                    "length": 6
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "c",
+                  "span": {
+                    "offset": 1098,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "u32": {
+                    "offset": 1100,
+                    "length": 3
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "d",
+                  "span": {
+                    "offset": 1110,
+                    "length": 1
+                  }
+                },
+                "ty": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "record": {
+            "docs": [
+              {
+                "comment": "Defining a record",
+                "span": {
+                  "offset": 1116,
+                  "length": 21
+                }
+              }
+            ],
+            "id": {
+              "string": "r",
+              "span": {
+                "offset": 1145,
+                "length": 1
+              }
+            },
+            "fields": [
+              {
+                "docs": [],
+                "id": {
+                  "string": "x",
+                  "span": {
+                    "offset": 1153,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "u32": {
+                    "offset": 1156,
+                    "length": 3
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "y",
+                  "span": {
+                    "offset": 1165,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "string": {
+                    "offset": 1168,
+                    "length": 6
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "z",
+                  "span": {
+                    "offset": 1180,
+                    "length": 1
+                  }
+                },
+                "ty": {
+                  "ident": {
+                    "string": "v",
+                    "span": {
+                      "offset": 1183,
+                      "length": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "flags": {
+            "docs": [
+              {
+                "comment": "Defining flags",
+                "span": {
+                  "offset": 1189,
+                  "length": 18
+                }
+              }
+            ],
+            "id": {
+              "string": "f",
+              "span": {
+                "offset": 1214,
+                "length": 1
+              }
+            },
+            "flags": [
+              {
+                "docs": [],
+                "id": {
+                  "string": "a",
+                  "span": {
+                    "offset": 1222,
+                    "length": 1
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "b",
+                  "span": {
+                    "offset": 1229,
+                    "length": 1
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "c",
+                  "span": {
+                    "offset": 1236,
+                    "length": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "enum": {
+            "docs": [
+              {
+                "comment": "Defining an enum",
+                "span": {
+                  "offset": 1242,
+                  "length": 20
+                }
+              }
+            ],
+            "id": {
+              "string": "e",
+              "span": {
+                "offset": 1268,
+                "length": 1
+              }
+            },
+            "cases": [
+              {
+                "docs": [],
+                "id": {
+                  "string": "a",
+                  "span": {
+                    "offset": 1276,
+                    "length": 1
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "b",
+                  "span": {
+                    "offset": 1283,
+                    "length": 1
+                  }
+                }
+              },
+              {
+                "docs": [],
+                "id": {
+                  "string": "c",
+                  "span": {
+                    "offset": 1290,
+                    "length": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "Type aliases",
+                "span": {
+                  "offset": 1296,
+                  "length": 16
+                }
+              }
+            ],
+            "id": {
+              "string": "t",
+              "span": {
+                "offset": 1318,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "ident": {
+                  "string": "e",
+                  "span": {
+                    "offset": 1322,
+                    "length": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [],
+            "id": {
+              "string": "t2",
+              "span": {
+                "offset": 1330,
+                "length": 2
+              }
+            },
+            "kind": {
+              "type": {
+                "string": {
+                  "offset": 1335,
+                  "length": 6
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [],
+            "id": {
+              "string": "t3",
+              "span": {
+                "offset": 1348,
+                "length": 2
+              }
+            },
+            "kind": {
+              "func": {
+                "params": [
+                  {
+                    "id": {
+                      "string": "a",
+                      "span": {
+                        "offset": 1358,
+                        "length": 1
+                      }
+                    },
+                    "ty": {
+                      "u32": {
+                        "offset": 1361,
+                        "length": 3
+                      }
+                    }
+                  },
+                  {
+                    "id": {
+                      "string": "b",
+                      "span": {
+                        "offset": 1366,
+                        "length": 1
+                      }
+                    },
+                    "ty": {
+                      "ident": {
+                        "string": "r",
+                        "span": {
+                          "offset": 1369,
+                          "length": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "results": {
+                  "scalar": {
+                    "u32": {
+                      "offset": 1375,
+                      "length": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

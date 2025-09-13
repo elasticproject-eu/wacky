@@ -1,0 +1,7 @@
+package test:comp;
+
+type x = u32;
+
+world w {
+    import x;
+}

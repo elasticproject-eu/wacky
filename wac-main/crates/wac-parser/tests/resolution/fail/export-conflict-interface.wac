@@ -1,0 +1,9 @@
+package test:comp;
+
+import f: func();
+
+interface foo {
+
+}
+
+export f as "foo";

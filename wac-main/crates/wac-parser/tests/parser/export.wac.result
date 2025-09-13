@@ -1,0 +1,290 @@
+{
+  "docs": [],
+  "directive": {
+    "package": {
+      "string": "test:comp",
+      "name": "test:comp",
+      "version": null,
+      "span": {
+        "offset": 8,
+        "length": 9
+      }
+    }
+  },
+  "statements": [
+    {
+      "Export": {
+        "docs": [
+          {
+            "comment": "Export an item (default name)",
+            "span": {
+              "offset": 20,
+              "length": 33
+            }
+          }
+        ],
+        "expr": {
+          "span": {
+            "offset": 61,
+            "length": 1
+          },
+          "primary": {
+            "ident": {
+              "string": "e",
+              "span": {
+                "offset": 61,
+                "length": 1
+              }
+            }
+          },
+          "postfix": []
+        },
+        "options": "none"
+      }
+    },
+    {
+      "Export": {
+        "docs": [
+          {
+            "comment": "Export an alias of an item (default name)",
+            "span": {
+              "offset": 65,
+              "length": 45
+            }
+          }
+        ],
+        "expr": {
+          "span": {
+            "offset": 118,
+            "length": 8
+          },
+          "primary": {
+            "ident": {
+              "string": "e",
+              "span": {
+                "offset": 118,
+                "length": 1
+              }
+            }
+          },
+          "postfix": [
+            {
+              "namedAccess": {
+                "span": {
+                  "offset": 119,
+                  "length": 7
+                },
+                "string": {
+                  "value": "foo",
+                  "span": {
+                    "offset": 120,
+                    "length": 5
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "options": "none"
+      }
+    },
+    {
+      "Export": {
+        "docs": [
+          {
+            "comment": "Export an alias of an item with a different name with string",
+            "span": {
+              "offset": 129,
+              "length": 64
+            }
+          }
+        ],
+        "expr": {
+          "span": {
+            "offset": 201,
+            "length": 8
+          },
+          "primary": {
+            "ident": {
+              "string": "e",
+              "span": {
+                "offset": 201,
+                "length": 1
+              }
+            }
+          },
+          "postfix": [
+            {
+              "namedAccess": {
+                "span": {
+                  "offset": 202,
+                  "length": 7
+                },
+                "string": {
+                  "value": "foo",
+                  "span": {
+                    "offset": 203,
+                    "length": 5
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "options": {
+          "rename": {
+            "string": {
+              "value": "bar",
+              "span": {
+                "offset": 213,
+                "length": 5
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "docs": [
+          {
+            "comment": "Export an alias of an item with a different name with identifier",
+            "span": {
+              "offset": 221,
+              "length": 68
+            }
+          }
+        ],
+        "expr": {
+          "span": {
+            "offset": 297,
+            "length": 8
+          },
+          "primary": {
+            "ident": {
+              "string": "e",
+              "span": {
+                "offset": 297,
+                "length": 1
+              }
+            }
+          },
+          "postfix": [
+            {
+              "namedAccess": {
+                "span": {
+                  "offset": 298,
+                  "length": 7
+                },
+                "string": {
+                  "value": "foo",
+                  "span": {
+                    "offset": 299,
+                    "length": 5
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "options": {
+          "rename": {
+            "ident": {
+              "string": "foo-bar",
+              "span": {
+                "offset": 309,
+                "length": 7
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "docs": [
+          {
+            "comment": "Export of an instance spread",
+            "span": {
+              "offset": 319,
+              "length": 32
+            }
+          }
+        ],
+        "expr": {
+          "span": {
+            "offset": 359,
+            "length": 1
+          },
+          "primary": {
+            "ident": {
+              "string": "i",
+              "span": {
+                "offset": 359,
+                "length": 1
+              }
+            }
+          },
+          "postfix": []
+        },
+        "options": {
+          "spread": {
+            "offset": 360,
+            "length": 3
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "docs": [
+          {
+            "comment": "Export of an expression spread",
+            "span": {
+              "offset": 366,
+              "length": 34
+            }
+          }
+        ],
+        "expr": {
+          "span": {
+            "offset": 408,
+            "length": 19
+          },
+          "primary": {
+            "new": {
+              "span": {
+                "offset": 408,
+                "length": 19
+              },
+              "package": {
+                "string": "foo:bar",
+                "name": "foo:bar",
+                "version": null,
+                "span": {
+                  "offset": 412,
+                  "length": 7
+                }
+              },
+              "arguments": [
+                {
+                  "fill": {
+                    "offset": 422,
+                    "length": 3
+                  }
+                }
+              ]
+            }
+          },
+          "postfix": []
+        },
+        "options": {
+          "spread": {
+            "offset": 428,
+            "length": 3
+          }
+        }
+      }
+    }
+  ]
+}

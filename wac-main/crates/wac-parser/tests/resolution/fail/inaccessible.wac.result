@@ -1,0 +1,9 @@
+failed to resolve document
+
+  × an instance is required to perform an access operation
+   ╭─[tests/resolution/fail/inaccessible.wac:5:9]
+ 4 │ 
+ 5 │ let x = f.foo;
+   ·         ┬
+   ·         ╰── this evaluated to a function when an instance was expected
+   ╰────

@@ -1,0 +1,9 @@
+failed to resolve document
+
+  × missing instantiation argument `foo` for package `foo:bar`
+   ╭─[tests/resolution/fail/missing-inst-arg.wac:3:13]
+ 2 │ 
+ 3 │ let x = new foo:bar {};
+   ·             ───┬───
+   ·                ╰── missing argument `foo`
+   ╰────

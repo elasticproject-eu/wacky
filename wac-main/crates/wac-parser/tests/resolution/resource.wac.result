@@ -1,0 +1,3 @@
+digraph {
+    0 [ label = "type definition \"foo\""; kind = "interface"; export = "foo"]
+}

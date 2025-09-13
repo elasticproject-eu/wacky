@@ -1,0 +1,48 @@
+[package]
+name = "wac-parser"
+description = "A library for parsing and encoding WebAssembly Composition (WAC) source files."
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+categories = { workspace = true }
+keywords = { workspace = true }
+repository = { workspace = true }
+
+[dependencies]
+wac-graph = { workspace = true }
+anyhow = { workspace = true }
+logos = { workspace = true }
+thiserror = { workspace = true }
+semver = { workspace = true }
+log = { workspace = true }
+indexmap = { workspace = true }
+id-arena = { workspace = true }
+serde = { workspace = true }
+wasmparser = { workspace = true }
+wasm-encoder = { workspace = true }
+wasm-metadata = { workspace = true }
+miette = { workspace = true, features = ["serde"]}
+
+[dev-dependencies]
+wac-resolver = { path = "../wac-resolver", default-features = false, features = ["wat", "wit"] }
+owo-colors = "4.0.0"
+pretty_assertions = { workspace = true }
+pretty_env_logger = { workspace = true }
+rayon = "1.10.0"
+tokio = { workspace = true }
+serde_json = { workspace = true }
+wasmprinter = { workspace = true }
+miette = { workspace = true, features = ["fancy", "serde"]}
+
+[[test]]
+name = "parser"
+harness = false
+
+[[test]]
+name = "resolution"
+harness = false
+
+[[test]]
+name = "encoding"
+harness = false

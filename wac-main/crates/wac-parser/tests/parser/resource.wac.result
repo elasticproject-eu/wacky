@@ -1,0 +1,458 @@
+{
+  "docs": [],
+  "directive": {
+    "package": {
+      "string": "test:comp",
+      "name": "test:comp",
+      "version": null,
+      "span": {
+        "offset": 8,
+        "length": 9
+      }
+    }
+  },
+  "statements": [
+    {
+      "Type": {
+        "interface": {
+          "docs": [],
+          "id": {
+            "string": "foo",
+            "span": {
+              "offset": 30,
+              "length": 3
+            }
+          },
+          "items": [
+            {
+              "type": {
+                "resource": {
+                  "docs": [
+                    {
+                      "comment": "Resource without methods",
+                      "span": {
+                        "offset": 40,
+                        "length": 28
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "r1",
+                    "span": {
+                      "offset": 82,
+                      "length": 2
+                    }
+                  },
+                  "methods": []
+                }
+              }
+            },
+            {
+              "type": {
+                "resource": {
+                  "docs": [
+                    {
+                      "comment": "Resource with only constructor",
+                      "span": {
+                        "offset": 91,
+                        "length": 34
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "r2",
+                    "span": {
+                      "offset": 139,
+                      "length": 2
+                    }
+                  },
+                  "methods": [
+                    {
+                      "constructor": {
+                        "docs": [
+                          {
+                            "comment": "Constructor",
+                            "span": {
+                              "offset": 152,
+                              "length": 15
+                            }
+                          }
+                        ],
+                        "span": {
+                          "offset": 176,
+                          "length": 11
+                        },
+                        "params": []
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": {
+                "resource": {
+                  "docs": [
+                    {
+                      "comment": "Resource with constructor, instance method, and static method",
+                      "span": {
+                        "offset": 202,
+                        "length": 65
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "r3",
+                    "span": {
+                      "offset": 281,
+                      "length": 2
+                    }
+                  },
+                  "methods": [
+                    {
+                      "constructor": {
+                        "docs": [
+                          {
+                            "comment": "Constructor",
+                            "span": {
+                              "offset": 294,
+                              "length": 15
+                            }
+                          }
+                        ],
+                        "span": {
+                          "offset": 318,
+                          "length": 11
+                        },
+                        "params": [
+                          {
+                            "id": {
+                              "string": "a",
+                              "span": {
+                                "offset": 330,
+                                "length": 1
+                              }
+                            },
+                            "ty": {
+                              "u32": {
+                                "offset": 333,
+                                "length": 3
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "method": {
+                        "docs": [
+                          {
+                            "comment": "Method",
+                            "span": {
+                              "offset": 347,
+                              "length": 10
+                            }
+                          }
+                        ],
+                        "id": {
+                          "string": "a",
+                          "span": {
+                            "offset": 366,
+                            "length": 1
+                          }
+                        },
+                        "isStatic": false,
+                        "ty": {
+                          "params": [
+                            {
+                              "id": {
+                                "string": "b",
+                                "span": {
+                                  "offset": 374,
+                                  "length": 1
+                                }
+                              },
+                              "ty": {
+                                "u32": {
+                                  "offset": 377,
+                                  "length": 3
+                                }
+                              }
+                            }
+                          ],
+                          "results": "empty"
+                        }
+                      }
+                    },
+                    {
+                      "method": {
+                        "docs": [
+                          {
+                            "comment": "Static method",
+                            "span": {
+                              "offset": 391,
+                              "length": 17
+                            }
+                          }
+                        ],
+                        "id": {
+                          "string": "b",
+                          "span": {
+                            "offset": 417,
+                            "length": 1
+                          }
+                        },
+                        "isStatic": true,
+                        "ty": {
+                          "params": [
+                            {
+                              "id": {
+                                "string": "c",
+                                "span": {
+                                  "offset": 432,
+                                  "length": 1
+                                }
+                              },
+                              "ty": {
+                                "u32": {
+                                  "offset": 435,
+                                  "length": 3
+                                }
+                              }
+                            }
+                          ],
+                          "results": "empty"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Type": {
+        "world": {
+          "docs": [],
+          "id": {
+            "string": "bar",
+            "span": {
+              "offset": 456,
+              "length": 3
+            }
+          },
+          "items": [
+            {
+              "type": {
+                "resource": {
+                  "docs": [
+                    {
+                      "comment": "Resource without methods",
+                      "span": {
+                        "offset": 466,
+                        "length": 28
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "r1",
+                    "span": {
+                      "offset": 508,
+                      "length": 2
+                    }
+                  },
+                  "methods": []
+                }
+              }
+            },
+            {
+              "type": {
+                "resource": {
+                  "docs": [
+                    {
+                      "comment": "Resource with only constructor",
+                      "span": {
+                        "offset": 517,
+                        "length": 34
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "r2",
+                    "span": {
+                      "offset": 565,
+                      "length": 2
+                    }
+                  },
+                  "methods": [
+                    {
+                      "constructor": {
+                        "docs": [
+                          {
+                            "comment": "Constructor",
+                            "span": {
+                              "offset": 578,
+                              "length": 15
+                            }
+                          }
+                        ],
+                        "span": {
+                          "offset": 602,
+                          "length": 11
+                        },
+                        "params": []
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": {
+                "resource": {
+                  "docs": [
+                    {
+                      "comment": "Resource with constructor, instance method, and static method",
+                      "span": {
+                        "offset": 628,
+                        "length": 65
+                      }
+                    }
+                  ],
+                  "id": {
+                    "string": "r3",
+                    "span": {
+                      "offset": 707,
+                      "length": 2
+                    }
+                  },
+                  "methods": [
+                    {
+                      "constructor": {
+                        "docs": [
+                          {
+                            "comment": "Constructor",
+                            "span": {
+                              "offset": 720,
+                              "length": 15
+                            }
+                          }
+                        ],
+                        "span": {
+                          "offset": 744,
+                          "length": 11
+                        },
+                        "params": [
+                          {
+                            "id": {
+                              "string": "a",
+                              "span": {
+                                "offset": 756,
+                                "length": 1
+                              }
+                            },
+                            "ty": {
+                              "u32": {
+                                "offset": 759,
+                                "length": 3
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "method": {
+                        "docs": [
+                          {
+                            "comment": "Method",
+                            "span": {
+                              "offset": 773,
+                              "length": 10
+                            }
+                          }
+                        ],
+                        "id": {
+                          "string": "a",
+                          "span": {
+                            "offset": 792,
+                            "length": 1
+                          }
+                        },
+                        "isStatic": false,
+                        "ty": {
+                          "params": [
+                            {
+                              "id": {
+                                "string": "b",
+                                "span": {
+                                  "offset": 800,
+                                  "length": 1
+                                }
+                              },
+                              "ty": {
+                                "u32": {
+                                  "offset": 803,
+                                  "length": 3
+                                }
+                              }
+                            }
+                          ],
+                          "results": "empty"
+                        }
+                      }
+                    },
+                    {
+                      "method": {
+                        "docs": [
+                          {
+                            "comment": "Static method",
+                            "span": {
+                              "offset": 817,
+                              "length": 17
+                            }
+                          }
+                        ],
+                        "id": {
+                          "string": "b",
+                          "span": {
+                            "offset": 843,
+                            "length": 1
+                          }
+                        },
+                        "isStatic": true,
+                        "ty": {
+                          "params": [
+                            {
+                              "id": {
+                                "string": "c",
+                                "span": {
+                                  "offset": 858,
+                                  "length": 1
+                                }
+                              },
+                              "ty": {
+                                "u32": {
+                                  "offset": 861,
+                                  "length": 3
+                                }
+                              }
+                            }
+                          ],
+                          "results": "empty"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+failed to resolve document
+
+  × mismatched instantiation argument `x`
+  ├─▶ mismatched type for export `f`
+  ├─▶ mismatched type for function parameter `o`
+  ├─▶ mismatched type for option
+  ╰─▶ expected string, found u8
+   ╭─[tests/resolution/fail/mismatched-option.wac:7:23]
+ 6 │ 
+ 7 │ let i = new foo:bar { x };
+   ·                       ┬
+   ·                       ╰── mismatched argument `x`
+   ╰────

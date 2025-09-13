@@ -1,0 +1,50 @@
+[package]
+name = "wac-resolver"
+description = "A library for package resolvers for WAC document resolution."
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+categories = { workspace = true }
+keywords = { workspace = true }
+repository = { workspace = true }
+
+[dependencies]
+wac-types = { workspace = true }
+wac-parser = { workspace = true }
+semver = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+log = { workspace = true }
+wit-component = { workspace = true }
+indexmap = { workspace = true }
+wat = { workspace = true, optional = true }
+wit-parser = { workspace = true, optional = true }
+miette = { workspace = true }
+warg-client = { workspace = true, optional = true }
+warg-protocol = { workspace = true, optional = true }
+warg-crypto = { workspace = true, optional = true }
+tokio = { workspace = true, optional = true }
+futures = { workspace = true, optional = true }
+
+[dev-dependencies]
+wac-graph = { path = "../wac-graph" }
+wasmprinter = { workspace = true }
+warg-server = { workspace = true }
+wit-parser = { workspace = true }
+pretty_assertions = { workspace = true }
+tokio-util = "0.7.10"
+tempdir = "0.3.7"
+tempfile = "3.2.0"
+
+[features]
+default = ["registry"]
+wat = ["dep:wat"]
+wit = ["dep:wit-parser"]
+registry = [
+    "dep:warg-client",
+    "dep:warg-protocol",
+    "dep:warg-crypto",
+    "dep:tokio",
+    "dep:futures",
+]

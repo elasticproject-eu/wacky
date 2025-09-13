@@ -1,0 +1,12 @@
+digraph {
+    0 [ label = "import \"wasi:io/streams\""; kind = "instance"]
+    1 [ label = "instantiation of package \"foo:bar\""; kind = "instance"]
+    2 [ label = "alias of export \"foo:bar/baz@0.1.0\""; kind = "instance"]
+    3 [ label = "instantiation of package \"foo:bar\""; kind = "instance"; export = "i"]
+    4 [ label = "alias of export \"foo:bar/baz@0.1.0\""; kind = "instance"; export = "foo:bar/baz@0.1.0"]
+    0 -> 1 [ label = "argument to" ]
+    1 -> 2 [ label = "aliased export" ]
+    0 -> 3 [ label = "argument to" ]
+    2 -> 3 [ label = "argument to" ]
+    3 -> 4 [ label = "aliased export" ]
+}

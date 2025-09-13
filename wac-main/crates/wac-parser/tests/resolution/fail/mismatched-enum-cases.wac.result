@@ -1,0 +1,11 @@
+failed to resolve document
+
+  × mismatched instantiation argument `x`
+  ├─▶ mismatched type for export `e`
+  ╰─▶ expected enum case 1 to be named `b`, found an enum case named `c`
+    ╭─[tests/resolution/fail/mismatched-enum-cases.wac:11:23]
+ 10 │ 
+ 11 │ let i = new foo:bar { x };
+    ·                       ┬
+    ·                       ╰── mismatched argument `x`
+    ╰────

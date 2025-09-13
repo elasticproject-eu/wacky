@@ -1,0 +1,620 @@
+{
+  "docs": [],
+  "directive": {
+    "package": {
+      "string": "test:comp",
+      "name": "test:comp",
+      "version": null,
+      "span": {
+        "offset": 8,
+        "length": 9
+      }
+    }
+  },
+  "statements": [
+    {
+      "Let": {
+        "docs": [
+          {
+            "comment": "Instantiate without args",
+            "span": {
+              "offset": 20,
+              "length": 28
+            }
+          }
+        ],
+        "id": {
+          "string": "a",
+          "span": {
+            "offset": 53,
+            "length": 1
+          }
+        },
+        "expr": {
+          "span": {
+            "offset": 57,
+            "length": 14
+          },
+          "primary": {
+            "new": {
+              "span": {
+                "offset": 57,
+                "length": 14
+              },
+              "package": {
+                "string": "foo:bar",
+                "name": "foo:bar",
+                "version": null,
+                "span": {
+                  "offset": 61,
+                  "length": 7
+                }
+              },
+              "arguments": []
+            }
+          },
+          "postfix": []
+        }
+      }
+    },
+    {
+      "Let": {
+        "docs": [
+          {
+            "comment": "Instantiation with import-propagation.",
+            "span": {
+              "offset": 74,
+              "length": 42
+            }
+          }
+        ],
+        "id": {
+          "string": "b",
+          "span": {
+            "offset": 121,
+            "length": 1
+          }
+        },
+        "expr": {
+          "span": {
+            "offset": 125,
+            "length": 25
+          },
+          "primary": {
+            "new": {
+              "span": {
+                "offset": 125,
+                "length": 25
+              },
+              "package": {
+                "string": "foo:bar@1.0.0",
+                "name": "foo:bar",
+                "version": "1.0.0",
+                "span": {
+                  "offset": 129,
+                  "length": 13
+                }
+              },
+              "arguments": [
+                {
+                  "fill": {
+                    "offset": 145,
+                    "length": 3
+                  }
+                }
+              ]
+            }
+          },
+          "postfix": []
+        }
+      }
+    },
+    {
+      "Let": {
+        "docs": [
+          {
+            "comment": "Instantiation with arguments",
+            "span": {
+              "offset": 153,
+              "length": 32
+            }
+          }
+        ],
+        "id": {
+          "string": "c",
+          "span": {
+            "offset": 190,
+            "length": 1
+          }
+        },
+        "expr": {
+          "span": {
+            "offset": 194,
+            "length": 35
+          },
+          "primary": {
+            "new": {
+              "span": {
+                "offset": 194,
+                "length": 35
+              },
+              "package": {
+                "string": "foo:bar@2.0.0",
+                "name": "foo:bar",
+                "version": "2.0.0",
+                "span": {
+                  "offset": 198,
+                  "length": 13
+                }
+              },
+              "arguments": [
+                {
+                  "inferred": {
+                    "string": "a",
+                    "span": {
+                      "offset": 214,
+                      "length": 1
+                    }
+                  }
+                },
+                {
+                  "inferred": {
+                    "string": "b",
+                    "span": {
+                      "offset": 217,
+                      "length": 1
+                    }
+                  }
+                },
+                {
+                  "named": {
+                    "name": {
+                      "string": {
+                        "value": "c",
+                        "span": {
+                          "offset": 220,
+                          "length": 3
+                        }
+                      }
+                    },
+                    "expr": {
+                      "span": {
+                        "offset": 225,
+                        "length": 1
+                      },
+                      "primary": {
+                        "ident": {
+                          "string": "c",
+                          "span": {
+                            "offset": 225,
+                            "length": 1
+                          }
+                        }
+                      },
+                      "postfix": []
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "postfix": []
+        }
+      }
+    },
+    {
+      "Let": {
+        "docs": [
+          {
+            "comment": "Instantiation with arguments and import-propagation.",
+            "span": {
+              "offset": 232,
+              "length": 56
+            }
+          }
+        ],
+        "id": {
+          "string": "d",
+          "span": {
+            "offset": 293,
+            "length": 1
+          }
+        },
+        "expr": {
+          "span": {
+            "offset": 297,
+            "length": 58
+          },
+          "primary": {
+            "new": {
+              "span": {
+                "offset": 297,
+                "length": 58
+              },
+              "package": {
+                "string": "foo:bar@3.0.0",
+                "name": "foo:bar",
+                "version": "3.0.0",
+                "span": {
+                  "offset": 301,
+                  "length": 13
+                }
+              },
+              "arguments": [
+                {
+                  "inferred": {
+                    "string": "a",
+                    "span": {
+                      "offset": 317,
+                      "length": 1
+                    }
+                  }
+                },
+                {
+                  "named": {
+                    "name": {
+                      "string": {
+                        "value": "b",
+                        "span": {
+                          "offset": 320,
+                          "length": 3
+                        }
+                      }
+                    },
+                    "expr": {
+                      "span": {
+                        "offset": 325,
+                        "length": 17
+                      },
+                      "primary": {
+                        "nested": {
+                          "span": {
+                            "offset": 325,
+                            "length": 17
+                          },
+                          "inner": {
+                            "span": {
+                              "offset": 326,
+                              "length": 15
+                            },
+                            "primary": {
+                              "new": {
+                                "span": {
+                                  "offset": 326,
+                                  "length": 15
+                                },
+                                "package": {
+                                  "string": "foo:bar",
+                                  "name": "foo:bar",
+                                  "version": null,
+                                  "span": {
+                                    "offset": 330,
+                                    "length": 7
+                                  }
+                                },
+                                "arguments": []
+                              }
+                            },
+                            "postfix": []
+                          }
+                        }
+                      },
+                      "postfix": []
+                    }
+                  }
+                },
+                {
+                  "named": {
+                    "name": {
+                      "ident": {
+                        "string": "c",
+                        "span": {
+                          "offset": 344,
+                          "length": 1
+                        }
+                      }
+                    },
+                    "expr": {
+                      "span": {
+                        "offset": 347,
+                        "length": 1
+                      },
+                      "primary": {
+                        "ident": {
+                          "string": "c",
+                          "span": {
+                            "offset": 347,
+                            "length": 1
+                          }
+                        }
+                      },
+                      "postfix": []
+                    }
+                  }
+                },
+                {
+                  "fill": {
+                    "offset": 350,
+                    "length": 3
+                  }
+                }
+              ]
+            }
+          },
+          "postfix": []
+        }
+      }
+    },
+    {
+      "Let": {
+        "docs": [
+          {
+            "comment": "Nested expression",
+            "span": {
+              "offset": 358,
+              "length": 21
+            }
+          }
+        ],
+        "id": {
+          "string": "e",
+          "span": {
+            "offset": 384,
+            "length": 1
+          }
+        },
+        "expr": {
+          "span": {
+            "offset": 388,
+            "length": 3
+          },
+          "primary": {
+            "nested": {
+              "span": {
+                "offset": 388,
+                "length": 3
+              },
+              "inner": {
+                "span": {
+                  "offset": 389,
+                  "length": 1
+                },
+                "primary": {
+                  "ident": {
+                    "string": "b",
+                    "span": {
+                      "offset": 389,
+                      "length": 1
+                    }
+                  }
+                },
+                "postfix": []
+              }
+            }
+          },
+          "postfix": []
+        }
+      }
+    },
+    {
+      "Let": {
+        "docs": [
+          {
+            "comment": "Access expression",
+            "span": {
+              "offset": 394,
+              "length": 21
+            }
+          }
+        ],
+        "id": {
+          "string": "f",
+          "span": {
+            "offset": 420,
+            "length": 1
+          }
+        },
+        "expr": {
+          "span": {
+            "offset": 424,
+            "length": 29
+          },
+          "primary": {
+            "ident": {
+              "string": "e",
+              "span": {
+                "offset": 424,
+                "length": 1
+              }
+            }
+          },
+          "postfix": [
+            {
+              "namedAccess": {
+                "span": {
+                  "offset": 425,
+                  "length": 7
+                },
+                "string": {
+                  "value": "b-c",
+                  "span": {
+                    "offset": 426,
+                    "length": 5
+                  }
+                }
+              }
+            },
+            {
+              "access": {
+                "span": {
+                  "offset": 432,
+                  "length": 2
+                },
+                "id": {
+                  "string": "c",
+                  "span": {
+                    "offset": 433,
+                    "length": 1
+                  }
+                }
+              }
+            },
+            {
+              "access": {
+                "span": {
+                  "offset": 434,
+                  "length": 2
+                },
+                "id": {
+                  "string": "d",
+                  "span": {
+                    "offset": 435,
+                    "length": 1
+                  }
+                }
+              }
+            },
+            {
+              "namedAccess": {
+                "span": {
+                  "offset": 436,
+                  "length": 15
+                },
+                "string": {
+                  "value": "foo:bar/baz",
+                  "span": {
+                    "offset": 437,
+                    "length": 13
+                  }
+                }
+              }
+            },
+            {
+              "access": {
+                "span": {
+                  "offset": 451,
+                  "length": 2
+                },
+                "id": {
+                  "string": "e",
+                  "span": {
+                    "offset": 452,
+                    "length": 1
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "docs": [
+          {
+            "comment": "Mix of instantiation arguments",
+            "span": {
+              "offset": 456,
+              "length": 34
+            }
+          }
+        ],
+        "id": {
+          "string": "h",
+          "span": {
+            "offset": 495,
+            "length": 1
+          }
+        },
+        "expr": {
+          "span": {
+            "offset": 499,
+            "length": 45
+          },
+          "primary": {
+            "new": {
+              "span": {
+                "offset": 499,
+                "length": 45
+              },
+              "package": {
+                "string": "f:bar",
+                "name": "f:bar",
+                "version": null,
+                "span": {
+                  "offset": 503,
+                  "length": 5
+                }
+              },
+              "arguments": [
+                {
+                  "inferred": {
+                    "string": "inferred",
+                    "span": {
+                      "offset": 511,
+                      "length": 8
+                    }
+                  }
+                },
+                {
+                  "spread": {
+                    "string": "a",
+                    "span": {
+                      "offset": 524,
+                      "length": 1
+                    }
+                  }
+                },
+                {
+                  "named": {
+                    "name": {
+                      "ident": {
+                        "string": "b",
+                        "span": {
+                          "offset": 527,
+                          "length": 1
+                        }
+                      }
+                    },
+                    "expr": {
+                      "span": {
+                        "offset": 530,
+                        "length": 1
+                      },
+                      "primary": {
+                        "ident": {
+                          "string": "c",
+                          "span": {
+                            "offset": 530,
+                            "length": 1
+                          }
+                        }
+                      },
+                      "postfix": []
+                    }
+                  }
+                },
+                {
+                  "spread": {
+                    "string": "d",
+                    "span": {
+                      "offset": 536,
+                      "length": 1
+                    }
+                  }
+                },
+                {
+                  "fill": {
+                    "offset": 539,
+                    "length": 3
+                  }
+                }
+              ]
+            }
+          },
+          "postfix": []
+        }
+      }
+    }
+  ]
+}

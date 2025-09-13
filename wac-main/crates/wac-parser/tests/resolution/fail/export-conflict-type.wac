@@ -1,0 +1,9 @@
+package test:comp;
+
+import f as "x": func();
+
+record x {
+    a: u32
+}
+
+export f as "x";

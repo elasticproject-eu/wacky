@@ -1,0 +1,11 @@
+failed to resolve document
+
+  × mismatched instantiation argument `x`
+  ├─▶ mismatched type for export `f`
+  ╰─▶ expected flag 1 to be named `b`, found a flag named `c`
+    ╭─[tests/resolution/fail/mismatched-flags.wac:11:23]
+ 10 │ 
+ 11 │ let i = new foo:bar { x };
+    ·                       ┬
+    ·                       ╰── mismatched argument `x`
+    ╰────

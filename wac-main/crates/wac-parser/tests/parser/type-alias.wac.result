@@ -1,0 +1,845 @@
+{
+  "docs": [],
+  "directive": {
+    "package": {
+      "string": "test:comp",
+      "name": "test:comp",
+      "version": null,
+      "span": {
+        "offset": 8,
+        "length": 9
+      }
+    }
+  },
+  "statements": [
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "u8",
+                "span": {
+                  "offset": 20,
+                  "length": 6
+                }
+              }
+            ],
+            "id": {
+              "string": "a",
+              "span": {
+                "offset": 32,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "u8": {
+                  "offset": 36,
+                  "length": 2
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "s8",
+                "span": {
+                  "offset": 40,
+                  "length": 6
+                }
+              }
+            ],
+            "id": {
+              "string": "b",
+              "span": {
+                "offset": 52,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "s8": {
+                  "offset": 56,
+                  "length": 2
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "u16",
+                "span": {
+                  "offset": 60,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "c",
+              "span": {
+                "offset": 73,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "u16": {
+                  "offset": 77,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "s16",
+                "span": {
+                  "offset": 82,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "d",
+              "span": {
+                "offset": 95,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "s16": {
+                  "offset": 99,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "u32",
+                "span": {
+                  "offset": 104,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "e",
+              "span": {
+                "offset": 117,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "u32": {
+                  "offset": 121,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "s32",
+                "span": {
+                  "offset": 126,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "f",
+              "span": {
+                "offset": 139,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "s32": {
+                  "offset": 143,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "u64",
+                "span": {
+                  "offset": 148,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "g",
+              "span": {
+                "offset": 161,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "u64": {
+                  "offset": 165,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "s64",
+                "span": {
+                  "offset": 170,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "h",
+              "span": {
+                "offset": 183,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "s64": {
+                  "offset": 187,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "f32",
+                "span": {
+                  "offset": 192,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "i",
+              "span": {
+                "offset": 205,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "f32": {
+                  "offset": 209,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "f64",
+                "span": {
+                  "offset": 214,
+                  "length": 7
+                }
+              }
+            ],
+            "id": {
+              "string": "j",
+              "span": {
+                "offset": 227,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "f64": {
+                  "offset": 231,
+                  "length": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "bool",
+                "span": {
+                  "offset": 236,
+                  "length": 8
+                }
+              }
+            ],
+            "id": {
+              "string": "k",
+              "span": {
+                "offset": 250,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "bool": {
+                  "offset": 254,
+                  "length": 4
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "char",
+                "span": {
+                  "offset": 260,
+                  "length": 8
+                }
+              }
+            ],
+            "id": {
+              "string": "l",
+              "span": {
+                "offset": 274,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "char": {
+                  "offset": 278,
+                  "length": 4
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "string",
+                "span": {
+                  "offset": 284,
+                  "length": 10
+                }
+              }
+            ],
+            "id": {
+              "string": "m",
+              "span": {
+                "offset": 300,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "string": {
+                  "offset": 304,
+                  "length": 6
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "tuple<u8, s8>",
+                "span": {
+                  "offset": 312,
+                  "length": 17
+                }
+              }
+            ],
+            "id": {
+              "string": "n",
+              "span": {
+                "offset": 335,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "tuple": [
+                  [
+                    {
+                      "u8": {
+                        "offset": 345,
+                        "length": 2
+                      }
+                    },
+                    {
+                      "s8": {
+                        "offset": 349,
+                        "length": 2
+                      }
+                    }
+                  ],
+                  {
+                    "offset": 339,
+                    "length": 13
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "list<tuple<u8>>",
+                "span": {
+                  "offset": 354,
+                  "length": 19
+                }
+              }
+            ],
+            "id": {
+              "string": "o",
+              "span": {
+                "offset": 379,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "list": [
+                  {
+                    "tuple": [
+                      [
+                        {
+                          "u8": {
+                            "offset": 394,
+                            "length": 2
+                          }
+                        }
+                      ],
+                      {
+                        "offset": 388,
+                        "length": 9
+                      }
+                    ]
+                  },
+                  {
+                    "offset": 383,
+                    "length": 15
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "option<string>",
+                "span": {
+                  "offset": 400,
+                  "length": 18
+                }
+              }
+            ],
+            "id": {
+              "string": "p",
+              "span": {
+                "offset": 424,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "option": [
+                  {
+                    "string": {
+                      "offset": 435,
+                      "length": 6
+                    }
+                  },
+                  {
+                    "offset": 428,
+                    "length": 14
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "result",
+                "span": {
+                  "offset": 444,
+                  "length": 10
+                }
+              }
+            ],
+            "id": {
+              "string": "q",
+              "span": {
+                "offset": 460,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "result": {
+                  "ok": null,
+                  "err": null,
+                  "span": {
+                    "offset": 464,
+                    "length": 6
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "result<u8>",
+                "span": {
+                  "offset": 472,
+                  "length": 14
+                }
+              }
+            ],
+            "id": {
+              "string": "r",
+              "span": {
+                "offset": 492,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "result": {
+                  "ok": {
+                    "u8": {
+                      "offset": 503,
+                      "length": 2
+                    }
+                  },
+                  "err": null,
+                  "span": {
+                    "offset": 496,
+                    "length": 10
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "result<_, s8>",
+                "span": {
+                  "offset": 508,
+                  "length": 17
+                }
+              }
+            ],
+            "id": {
+              "string": "s",
+              "span": {
+                "offset": 531,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "result": {
+                  "ok": null,
+                  "err": {
+                    "s8": {
+                      "offset": 545,
+                      "length": 2
+                    }
+                  },
+                  "span": {
+                    "offset": 535,
+                    "length": 13
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "result<u8, string>",
+                "span": {
+                  "offset": 550,
+                  "length": 22
+                }
+              }
+            ],
+            "id": {
+              "string": "t",
+              "span": {
+                "offset": 578,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "result": {
+                  "ok": {
+                    "u8": {
+                      "offset": 589,
+                      "length": 2
+                    }
+                  },
+                  "err": {
+                    "string": {
+                      "offset": 593,
+                      "length": 6
+                    }
+                  },
+                  "span": {
+                    "offset": 582,
+                    "length": 18
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "borrow<x>",
+                "span": {
+                  "offset": 602,
+                  "length": 13
+                }
+              }
+            ],
+            "id": {
+              "string": "u",
+              "span": {
+                "offset": 621,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "borrow": [
+                  {
+                    "string": "x",
+                    "span": {
+                      "offset": 632,
+                      "length": 1
+                    }
+                  },
+                  {
+                    "offset": 625,
+                    "length": 9
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "x",
+                "span": {
+                  "offset": 636,
+                  "length": 5
+                }
+              }
+            ],
+            "id": {
+              "string": "v",
+              "span": {
+                "offset": 647,
+                "length": 1
+              }
+            },
+            "kind": {
+              "type": {
+                "ident": {
+                  "string": "x",
+                  "span": {
+                    "offset": 651,
+                    "length": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Type": {
+        "type": {
+          "alias": {
+            "docs": [
+              {
+                "comment": "keyword",
+                "span": {
+                  "offset": 654,
+                  "length": 11
+                }
+              }
+            ],
+            "id": {
+              "string": "type",
+              "span": {
+                "offset": 671,
+                "length": 5
+              }
+            },
+            "kind": {
+              "type": {
+                "ident": {
+                  "string": "v",
+                  "span": {
+                    "offset": 679,
+                    "length": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

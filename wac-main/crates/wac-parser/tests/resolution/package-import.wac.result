@@ -1,0 +1,3 @@
+digraph {
+    0 [ label = "import \"foo:bar/i\""; kind = "instance"; export = "foo:bar/i"]
+}

@@ -1,0 +1,9 @@
+package test:comp;
+
+flags f {
+    a,
+    b,
+    c,
+    d,
+    a,
+}

@@ -1,0 +1,10 @@
+package test:comp;
+
+interface a {
+    type a = u32;
+}
+
+interface b {
+    type b = u32;
+    use a.{a as b};
+}

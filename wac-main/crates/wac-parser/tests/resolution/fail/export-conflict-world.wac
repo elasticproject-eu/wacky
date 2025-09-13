@@ -1,0 +1,9 @@
+package test:comp;
+
+import f: func();
+
+world foo {
+
+}
+
+export f as "foo";

@@ -1,0 +1,8 @@
+package test:comp;
+
+interface foo {
+    resource x {
+        constructor();
+        constructor(x: u32);
+    }
+}

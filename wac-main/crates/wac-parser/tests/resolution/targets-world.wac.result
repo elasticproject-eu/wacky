@@ -1,0 +1,6 @@
+digraph {
+    0 [ label = "type definition \"world\""; kind = "world"; export = "world"]
+    1 [ label = "import \"f\""; kind = "function"]
+    2 [ label = "instantiation of package \"foo:bar\""; kind = "instance"; export = "i"]
+    1 -> 2 [ label = "argument to" ]
+}

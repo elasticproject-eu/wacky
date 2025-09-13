@@ -1,0 +1,97 @@
+[package]
+name = "wac-cli"
+description = "A tool for encoding and decoding WebAssembly compositions."
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+categories = { workspace = true }
+keywords = { workspace = true }
+repository = { workspace = true }
+
+[workspace.package]
+version = "0.9.0-dev"
+edition = "2021"
+authors = ["Peter Huene <peter@huene.dev>"]
+license = "Apache-2.0 WITH LLVM-exception"
+categories = ["wasm"]
+keywords = ["webassembly", "wasm", "components", "component-model"]
+repository = "https://github.com/bytecodealliance/wac"
+
+[dependencies]
+wac-types = { workspace = true }
+wac-graph = { workspace = true }
+wac-resolver = { workspace = true, default-features = false }
+wac-parser = { workspace = true, default-features = false }
+warg-client = { workspace = true, optional = true }
+warg-protocol = { workspace = true, optional = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+pretty_env_logger = { workspace = true }
+log = { workspace = true }
+tokio = { workspace = true }
+owo-colors = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+wat = { workspace = true }
+wasmprinter = { workspace = true }
+thiserror = { workspace = true }
+indexmap = { workspace = true }
+miette = { workspace = true, features = ["fancy"] }
+semver = { workspace = true }
+indicatif = { workspace = true, optional = true }
+wit-parser = { workspace = true }
+wit-component = { workspace = true }
+
+[features]
+default = ["wit", "registry"]
+wat = ["wac-resolver/wat"]
+wit = ["wac-resolver/wit"]
+registry = [
+    "wac-resolver/registry",
+    "dep:indicatif",
+    "dep:warg-client",
+    "dep:warg-protocol",
+]
+native-tls-vendored = ["warg-client?/native-tls-vendored"]
+
+[workspace]
+members = ["examples/programmatic"]
+
+[workspace.dependencies]
+wac-parser = { path = "crates/wac-parser", version = "0.9.0-dev", default-features = false }
+wac-resolver = { path = "crates/wac-resolver", version = "0.9.0-dev", default-features = false }
+wac-graph = { path = "crates/wac-graph", version = "0.9.0-dev" }
+wac-types = { path = "crates/wac-types", version = "0.9.0-dev" }
+wit-parser = "0.238.0"
+wasmparser = "0.238.0"
+wit-component = "0.238.0"
+wasm-encoder = "0.238.0"
+wasmprinter = "0.238.0"
+wasm-metadata = "0.238.0"
+wat = "1.238.0"
+anyhow = "1.0.81"
+clap = { version = "4.5.4", features = ["derive"] }
+semver = { version = "1.0.22", features = ["serde"] }
+pretty_env_logger = "0.5.0"
+log = "0.4.21"
+tokio = { version = "1.45.1", default-features = false, features = [
+    "macros",
+    "rt-multi-thread",
+] }
+owo-colors = { version = "4.0.0", features = ["supports-colors"] }
+indexmap = { version = "2.2.6", features = ["serde"] }
+id-arena = "2.2.1"
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.115"
+logos = "0.14.0"
+miette = "7.2.0"
+thiserror = "1.0.58"
+warg-client = "0.9.0"
+warg-protocol = "0.9.0"
+warg-crypto = "0.9.0"
+warg-server = "0.9.0"
+futures = "0.3.30"
+indicatif = "0.17.8"
+pretty_assertions = "1.4.0"
+petgraph = "0.6.4"

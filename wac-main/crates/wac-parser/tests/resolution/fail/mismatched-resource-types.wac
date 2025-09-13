@@ -1,0 +1,9 @@
+package test:comp;
+
+import x: interface {
+    resource x;
+    resource y;
+    f: func(x: y);
+};
+
+let i = new foo:bar { x };

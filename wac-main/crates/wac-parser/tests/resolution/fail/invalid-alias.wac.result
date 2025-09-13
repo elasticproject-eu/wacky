@@ -1,0 +1,9 @@
+failed to resolve document
+
+  × `a` (interface) cannot be used in a type alias
+   ╭─[tests/resolution/fail/invalid-alias.wac:7:10]
+ 6 │ 
+ 7 │ type x = a;
+   ·          ┬
+   ·          ╰── `a` cannot be aliased
+   ╰────

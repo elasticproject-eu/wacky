@@ -1,0 +1,6 @@
+package test:comp;
+
+world w {
+    import x: func();
+    import x: func();
+}
