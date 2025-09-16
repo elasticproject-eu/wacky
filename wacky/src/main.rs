@@ -1,6 +1,6 @@
 use anyhow::{Context, Result};
 use clap::Parser;
-use log::debug;
+//use log::debug;
 use log::info;
 use std::collections::{HashMap, HashSet};
 use std::fs;
@@ -18,12 +18,14 @@ struct Cli {
 fn main() -> Result<()> {
     env_logger::init();
     info!("Wacky is starting...");
+    println!("Wacky is starting...");
     let args = Cli::parse();
     let read_toml = fs::read_to_string(&args.config_path)
         .context("Failed while reading untrusted_components configuration toml")?;
 
     // Populate HashMap with the untrusted components and shimming parameters
     info!("Reading HashMap from configuration toml provided");
+    println!("Loading Access Control configurations provided");
     let untrusted_comps: HashMap<String, ShimParameters> = toml::from_str(&read_toml)
         .context("Failed while loading untrusted_components into HashMap")?;
 
@@ -49,14 +51,21 @@ fn main() -> Result<()> {
 
     //Populate HashSet with present components in the wac script
     info!("Reading Components taking part in composition from wac composition script...");
+    println!("Extracting Components taking part in the composition");
     let mut shimmed = false;
     let components_found: HashSet<String>;
     components_found = wac_read::composed_components(&args.wac_path);
     info!("Checking for the presence of any untrusted components in wac script..");
+    println!("Checking for the presence of any untrusted components");
     for (untrusted_component, parameters) in &untrusted_map {
         if components_found.contains(untrusted_component) {
-            debug!("Found the untrusted component{:?}", untrusted_component);
-            debug!(
+            info!("Found the untrusted component{:?}", untrusted_component);
+            println!("Found the untrusted component{:?}", untrusted_component);
+            info!(
+                "Calling shimmer to inject the {:?}..",
+                parameters.package_shim
+            );
+            println!(
                 "Calling shimmer to inject the {:?}..",
                 parameters.package_shim
             );

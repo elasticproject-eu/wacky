@@ -140,6 +140,7 @@ pub fn wac_shimmer(path: &Path, untrusted_component: &String, parameters: &ShimP
     }
 
     wac_printer(&doc, &wac_script, "shimed_script.wac");
+    println!("Shim successfully inserted.");
 }
 
 fn wac_printer(doc: &Document, source: &str, path: &str) {
