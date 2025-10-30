@@ -4,7 +4,7 @@
  The tool is built ontop of `wac` which is used for orchestrating and is a main stop point in the composition process of Wasm Component model.
  `wacky` is configurable, giving users control over the composition process and as a result the access control.
 
- ## Demonstrative example
+ ## Demonstrative examples
 
  The following is an example of a wac file used to compose two components together, 
 
@@ -49,7 +49,141 @@ let importer = new component:file {
 export importer.run;
 
 ```
+ Example Two: Another example showing nested layers of wacky.
+ Before running wacky:
 
+ ```
+ package example:composition;
+
+let exporter = new component:trustedwriter {...};
+
+let untrustedcomponent = new component:fileloader {
+  writer: exporter.writer,
+  ...,
+};
+
+
+let trustedcomponent = new component:trusted {
+  writer: exporter.writer,
+  fileaccess: untrustedcomponent.fileaccess,
+  ...,
+};
+
+export trustedcomponent.run;
+
+```
+
+After running wacky:
+```
+package example:composition;
+
+let exporter = new component:trustedwriter { ... };
+
+let exportershim1 = new shim:writershim {
+    writer: exporter.writer,
+    ...
+};
+
+let untrustedcomponent = new component:fileloader {
+    writer: exportershim1.writer,
+    ...
+};
+
+let trustedcomponent = new component:trusted {
+    writer: exporter.writer,
+    fileaccess: untrustedcomponent.fileaccess,
+    ...
+};
+
+export trustedcomponent.run;
+
+```
+
+Third example to showcase wacky run on implicit interfaces:
+Before running wacky implicit case:
+
+```
+package example:composition;
+
+
+let untrustedcomponent = new component:fileloader {...};
+
+export untrustedcomponent.run;
+
+```
+After running wacky implicit case:
+```
+package example:composition;
+
+let untrustedcomponentimplicitshim1 = new shim:writershim { ... };
+
+let untrustedcomponent = new component:fileloader {
+    ...untrustedcomponentimplicitshim1,
+};
+
+export untrustedcomponent.run;
+
+```
+
+Fourth combined example:
+Before running wasi
+````
+package example:composition;
+
+let exporter = new component:trustedwriter {...};
+
+let untrustedcomponent = new component:fileloader {
+  writer: exporter.writer,
+  ...,
+};
+
+
+let readertest = new component:filereading  {...};
+
+let trustedcomponent = new component:trustedwriter {
+  writer: exporter.writer,
+  fileaccess: untrustedcomponent.fileaccess,
+  ...,
+};
+
+export trustedcomponent.run;
+`````
+After running wacky on combined:
+````
+package example:composition;
+
+let exporter = new component:trustedwriter { ... };
+
+let exportershim1 = new shim:writershim {
+    writer: exporter.writer,
+    ...
+};
+
+let readertestimplicitshim1 = new docs:readershim { ... };
+
+let untrustedcomponent = new component:fileloader {
+    writer: exportershim1.writer,
+    ...
+};
+
+let readertest = new component:filereading {
+    ...readertestimplicitshim1,
+};
+
+let trustedcomponent = new component:trustedwriter {
+    writer: exporter.writer,
+    fileaccess: untrustedcomponent.fileaccess,
+    ...
+};
+
+export trustedcomponent.run;
+````
+
+
+A full example is already placed out when running wacky on compose.wac. 
+All components used in compose.wac and output have their binaries placed in deps according to wac requirments and their source code in directory "Components Source Code". 
+
+Samples of input, output and config files have been placed in respective directories.
 
 
  ## Dependencies
@@ -58,7 +192,7 @@ However an option to override the current file paths are provided with the use o
 
 The `wacky` tool has the following files:
 
-* `untrusted_component.toml` - Contains the untrusted component along with the shimming parameters. An example file has been placed in root directory.
+* `config.toml` - Contains the untrusted component along with the shimming parameters. An example file has been placed in root directory.
 * `compose.wac` - Original wac script file that we wish to investigate for untrusted components and shim if found.
 * `shimed_script.wac` - Output of `wacky` , produced after running the program. It contains the updated component links needed to inject the shim.
 
@@ -79,14 +213,17 @@ wacky/
 │  ├─ main.rs
 │  ├─ wac_read.rs
 │  ├─ wac_write.rs
+│  ├─ wac_write_implicit.rs
 ├─ Cargo.toml
 ├─ Cargo.lock
 ├─ compose.wac
-├─ untrusted_component.wac
+├─ implicitcompose.wac
+├─ config.toml
+├─ config_implicit.toml
 ```
 
 
-### 2. Second the desired state and access control restrictions are set by tunning the shimming parameters in the `untrusted_components.toml` as follows:
+### 2. Second the desired state and access control restrictions are set by tunning the shimming parameters in the `config.toml` as follows:
 An example of untrusted Component along with the interface needed to shim and the shim component used for the job. 
 
 ````toml
@@ -96,16 +233,32 @@ interface_to_shim = "writer"            <----  Specific interface to shim
 package_shim = "docs:writershim"        <----  The Shim Component package name
 `````
 
+When an interface is provided wacky can shim that specific interface and its considered the explicit case opposing the implicit one where an interface isnt provided just as shim. A `config_implicit.toml` is provided below to showcase those instances,
+
+````toml
+["component:file"]                      <---- untrusted component
+package_shim = "docs:writershim"        <----  The Shim Component package name
+`````
+
+
+
 ### 3. Finally build & run the program 
 ````
-`cargo run`
+#Explicit Interface Example 
+cargo run -- --cp 'Sample of configuration files/config.toml' --wp 'Sample of input/compose.wac'
+
+#It will produce output as "shimmed_script.wac", use this to compose the components together:
+wac compose -o output.wasm shimmed_script.wac
+
+#Then run the output of the components with runtime of choice. If using Wasmtime:
+wasmtime run --dir test-dir output.wasm
+
 `````
+All examples were run on Windows.
 
 A successful run will produce a shimmed wac should as follows.
 ````````
-wac-main/
-├─ crates/
-│  ├─ wac-parser.rs      
+wac-main/    
 wacky/
 ├─ src/
 │  ├─ lib.rs
@@ -116,7 +269,7 @@ wacky/
 ├─ Cargo.lock
 ├─ compose.wac
 ├─ shimmed_script.wac   <---- Success!
-├─ untrusted_component.toml
+├─ config.toml
 ````````
 The `wacky` output now serves as the new wac script to govern the component composition procedure. 
 

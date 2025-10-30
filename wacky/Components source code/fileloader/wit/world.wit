@@ -1,0 +1,9 @@
+package component:fileloader;
+
+interface fileaccess {
+    filnprint: func();
+}
+world fileloader {
+    import component:trustedwriter/writer;
+    export fileaccess;
+}

@@ -17,9 +17,9 @@ pub fn composed_components(path: &Path) -> HashSet<String> {
         }
     }
 
-    println!("Components Detected:");
+    info!("Components Detected:");
     for name in &components_found {
-        println!("• {}", name);
+        info!("• {}", name);
     }
     return components_found;
 }

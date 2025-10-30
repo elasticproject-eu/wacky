@@ -1,0 +1,18 @@
+package example:composition;
+
+let exporter = new component:trustedwriter {...};
+
+let untrustedcomponent = new component:fileloader {
+  writer: exporter.writer,
+  ...,
+};
+
+
+let trustedcomponent = new component:trusted {
+  writer: exporter.writer,
+  fileaccess: untrustedcomponent.fileaccess,
+  ...,
+};
+
+export trustedcomponent.run;
+

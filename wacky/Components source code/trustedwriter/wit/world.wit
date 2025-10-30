@@ -1,0 +1,9 @@
+package component:trustedwriter;
+
+interface writer {
+    writing-back: func(info: list<u8>);
+}
+
+world trustedwriter {
+    export writer;
+}

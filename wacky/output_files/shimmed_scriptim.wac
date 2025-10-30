@@ -1,0 +1,9 @@
+package example:composition;
+
+let untrustedcomponentimplicitshim1 = new docs:readershim { ... };
+
+let untrustedcomponent = new component:fileloader {
+    ...untrustedcomponentimplicitshim1,
+};
+
+export untrustedcomponent.run;

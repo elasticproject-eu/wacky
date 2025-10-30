@@ -1,0 +1,15 @@
+
+["component:reader"]
+component_to_shim = "docs:writetwo"
+interface_to_shim = "writer"
+package_shim = "docs:writershim"
+
+
+["component:fileloader"]
+component_to_shim = "component:trustedwriter"
+interface_to_shim = "writer"
+package_shim = "shim:writershim"
+
+
+["component:filereading"]
+package_shim = "docs:readershim"

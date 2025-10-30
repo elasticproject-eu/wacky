@@ -1,0 +1,7 @@
+package shim:writershim;
+
+
+world writershim {
+    import docs:writetwo/writer;
+    export docs:writetwo/writer;
+}

@@ -1,4 +1,4 @@
-use crate::ShimParameters;
+use crate::ShimParametersExplicit;
 use log::info;
 use miette::SourceSpan;
 use std::fs;
@@ -12,14 +12,13 @@ use wac_parser::{
     PostfixExpr, PrimaryExpr, Statement, String as WacString,
 };
 
-pub fn wac_shimmer(path: &Path, untrusted_component: &String, parameters: &ShimParameters) {
+pub fn wac_shimmer(path: &Path, untrusted_component: &String, parameters: &ShimParametersExplicit) {
     let wac_script = fs::read_to_string(path).expect("Error reading WAC file");
     let mut doc = Document::parse(&wac_script).expect("Error parsing wac into document");
     let mut index: usize = 0;
     let mut name = String::new();
 
     //Extracting name and position of component to be shimmed
-
     for (idx, statement) in &mut doc.statements.iter().enumerate() {
         if let Statement::Let(let_stmt) = statement {
             if let PrimaryExpr::New(new_expr) = &let_stmt.expr.primary {
@@ -35,7 +34,6 @@ pub fn wac_shimmer(path: &Path, untrusted_component: &String, parameters: &ShimP
     let component_name = name.clone();
     let mut shim_name;
 
-    // Preparing to add the shim instantiation
     info!("Preparing shim instantiation values");
 
     //Same interface name used by shimmer
@@ -108,10 +106,8 @@ pub fn wac_shimmer(path: &Path, untrusted_component: &String, parameters: &ShimP
     });
     let shim_position = index + 1;
     doc.statements.insert(shim_position, shim_instantiation);
-    // Done! The Instantiation of shim is completed here
     info!("Done! The Instantiation of shim is completed..");
 
-    // Changing the provider of the untrusted component to import from the shim
     info!("Changing the provider of the untrusted component to import from the shim..");
     for statement in &mut doc.statements {
         if let Statement::Let(let_stmt) = statement {
@@ -138,12 +134,11 @@ pub fn wac_shimmer(path: &Path, untrusted_component: &String, parameters: &ShimP
             }
         }
     }
-
-    wac_printer(&doc, &wac_script, "shimed_script.wac");
-    println!("Shim successfully inserted.");
+    wac_printer(&doc, &wac_script, "shimmed_script.wac");
+    info!("Shim successfully inserted.");
 }
 
-fn wac_printer(doc: &Document, source: &str, path: &str) {
+pub fn wac_printer(doc: &Document, source: &str, path: &str) {
     let mut out = String::new();
     let mut wac_printer = DocumentPrinter::new(&mut out, source, None);
     wac_printer.document(doc).expect("Failed to write to file");

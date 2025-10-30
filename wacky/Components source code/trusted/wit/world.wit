@@ -1,0 +1,8 @@
+package component:trusted;
+
+
+world trusted {
+    import component:trustedwriter/writer;
+    import component:fileloader/fileaccess;
+    export wasi:cli/run@0.2.7;
+}

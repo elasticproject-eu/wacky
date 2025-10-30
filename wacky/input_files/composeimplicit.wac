@@ -1,0 +1,7 @@
+package example:composition;
+
+
+let untrustedcomponent = new component:fileloader {...};
+
+export untrustedcomponent.run;
+

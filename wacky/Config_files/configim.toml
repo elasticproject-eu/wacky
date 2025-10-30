@@ -1,0 +1,2 @@
+["component:fileloader"]
+package_shim = "shim:writershim"
