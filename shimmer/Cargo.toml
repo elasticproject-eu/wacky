@@ -1,0 +1,13 @@
+[package]
+name = "shimmer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.48", features = ["derive"] }
+log = "0.4.28"
+pathdiff = "0.2.3"
+toml_edit = "0.23.6"
+wit-encoder = "0.239.0"
+wit-parser = "0.239.0"
+

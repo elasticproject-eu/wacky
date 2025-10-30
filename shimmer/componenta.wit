@@ -1,0 +1,15 @@
+package docs:adder@0.1.0;
+
+interface add {
+    add: func(x: u32, y: u32) -> u32;
+    subtract: func(pe: u32, ee: u32) -> u8;
+    addresult: func(yx: u32, y:u32) ->result<u32,f32>;
+    addlist: func(m: u16) -> list<u32>;
+    addoption: func(lo: option<u8>) -> option<u32>;
+    sumtuple: func(pair :tuple<u8,f64>) -> char;
+
+}
+
+world adder {
+    export add;
+}
