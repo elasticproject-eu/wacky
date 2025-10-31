@@ -1,1 +1,0 @@
-C:\Users\Shahd\ O\Desktop\wacky_dir\wacky\Components\ source\ code\fileloader\target\wasm32-wasip1\release\fileloader.wasm: C:\Users\Shahd\ O\Desktop\wacky_dir\wacky\Components\ source\ code\fileloader\src\bindings.rs C:\Users\Shahd\ O\Desktop\wacky_dir\wacky\Components\ source\ code\fileloader\src\lib.rs

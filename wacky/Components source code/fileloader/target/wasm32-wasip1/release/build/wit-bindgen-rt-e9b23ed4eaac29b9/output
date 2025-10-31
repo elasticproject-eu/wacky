@@ -1,2 +1,0 @@
-cargo:rustc-link-lib=wit_bindgen_cabi_realloc0_33_0
-cargo:rustc-link-search=native=C:\Users\Shahd O\Desktop\wacky_dir\wacky\Components source code\fileloader\target\wasm32-wasip1\release\build\wit-bindgen-rt-e9b23ed4eaac29b9\out
