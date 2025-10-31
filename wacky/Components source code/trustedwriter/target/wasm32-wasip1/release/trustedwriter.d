@@ -1,0 +1,1 @@
+C:\Users\Shahd\ O\Desktop\wacky_dir\wacky\Components\ source\ code\trustedwriter\target\wasm32-wasip1\release\trustedwriter.wasm: C:\Users\Shahd\ O\Desktop\wacky_dir\wacky\Components\ source\ code\trustedwriter\src\bindings.rs C:\Users\Shahd\ O\Desktop\wacky_dir\wacky\Components\ source\ code\trustedwriter\src\lib.rs

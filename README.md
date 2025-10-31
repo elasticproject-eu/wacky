@@ -187,8 +187,7 @@ Samples of input, output and config files have been placed in respective directo
 
 
  ## Dependencies
-By default the program expects all of the files mentioned below to be placed at project root.
-However an option to override the current file paths are provided with the use of `--cp` and `--wp` for  untrusted toml configuration file and an alternative wac path respectively.
+The program expects all of the files mentioned below to be provided with the use of `--cp` and `--wp` for  untrusted toml configuration file and an alternative wac path respectively.
 
 The `wacky` tool has the following files:
 
@@ -245,7 +244,7 @@ package_shim = "docs:writershim"        <----  The Shim Component package name
 ### 3. Finally build & run the program 
 ````
 #Explicit Interface Example 
-cargo run -- --cp 'Sample of configuration files/config.toml' --wp 'Sample of input/compose.wac'
+cargo run -- --cp 'Config_files/config.toml' --wp 'input_files/compose.wac'
 
 #It will produce output as "shimmed_script.wac", use this to compose the components together:
 wac compose -o output.wasm shimmed_script.wac
