@@ -272,13 +272,46 @@ wacky/
 ````````
 The `wacky` output now serves as the new wac script to govern the component composition procedure. 
 
-
 The remaining steps remain the same.
 See `wac` README.md crate for compositions steps after this. [wac-main](./wac-main/README.md)
 
+## Troubleshooting
+| Symptom | Cause / fix |
+|---|---|
+| No output, no log messages | Logging uses `env_logger` at `info` level. Run with `RUST_LOG=info cargo run -- --cp ... --wp ...`. "No untrusted components found" means no `[section]` name in the config matches a `new <package>` in the WAC script. |
+| Can't find `shimmed_script.wac` | The output path is hard-coded: it is always written to `shimmed_script.wac` in the **current working directory**, not in `output_files/`. |
+| Config entry silently ignored | An entry is **explicit** only if it has *both* `component_to_shim` and `interface_to_shim`. It is **implicit** only if it has *neither*. An entry with just one of the two is dropped. Unknown keys cause a parse error (`deny_unknown_fields`). Section names are lower-cased before matching, so package names in the WAC script must be lower-case. |
+| Only one untrusted component got shimmed | Every explicit match re-reads the original `--wp` file and overwrites `shimmed_script.wac`. With several explicit entries matched, only the last one written survives (HashMap order). The same applies to several implicit entries. Run `wacky` once per untrusted component and feed each output back in as `--wp`. |
+| Output contains `shim1` / `.writer` with an empty name, or `wac compose` fails | `component_to_shim` does not match any `new <package>` in the script. Check the package name exactly (e.g. `component:trustedwriter`). |
+| Shim is instantiated but the untrusted component still uses the original provider | Explicit mode only rewires arguments written as `iface: provider.iface` with a plain identifier name (not quoted `"ns:pkg/iface"` names). Implicit mode only rewires a `...` fill argument, so the untrusted component's `new` must contain `...`. Always inspect the generated WAC. |
+| `wac compose` can't find a package | Binaries must be at `deps/<namespace>/<name>.wasm` (e.g. `deps/shim/writershim.wasm` for `shim:writershim`). |
+| Shim fails to link / type mismatch | The shim world must **import and export the same interface** it mediates (see `writershim/wit/world.wit`). Generate a correct skeleton with `shimmer -c <file.wit> -i <interface>`. |
+| WASI version mismatch / `wit-bindgen` errors | WASI 0.2.x versions differ between components. Declare only the WASI interfaces you actually use, and use the **implicit** mode for WASI shims. |
+| Build fails | `wac-parser` is a path dependency on the forked `../wac-main` (custom `printer.rs`), so keep the directory layout. The crate uses Rust edition 2024 (Rust ≥ 1.85). |
+
+
+## Performance
+The performance of `wacky` is measured with Criterion on Wasmtime 36 (Ryzen 7 5800H, 16 GB, Windows 11). 
+The baseline is a two-component composition.
+
+| Metric | Baseline | With shim | Overhead |
+|---|---|---|---|
+| Instantiation (one-time) | 68.39 µs | 122.09 µs | +53.7 µs (+78.5%) |
+| 100 calls | 11.32 µs | 11.88 µs | +5.0% (5.6 ns/call) |
+| 1,000 calls | 114.49 µs | 118.97 µs | +3.9% (4.5 ns/call) |
+| 10,000 calls | 1.14 ms | 1.18 ms | +3.1% (3.5 ns/call) |
+| 100,000 calls | 11.35 ms | 11.77 ms | +3.7% (4.2 ns/call) |
+
+## Security implications
+- `wacky` rewires an untrusted component's imports to a shim at composition time, without changing the component's binary or WIT.
+- Source code of shims is trusted.
+- Access control policy is static and fixed at the build time. Policy modification requires re-composition.
 
 ## License
 This project is licensed under the [Apache 2.0 License](LICENSE)
+
+## Funding
+This work has been partially supported by the [ELASTIC project](https://elasticproject.eu/), which received funding from the [Smart Networks and Services Joint Undertaking](https://smart-networks.europa.eu/) (SNS JU) under the European Union’s [Horizon Europe](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under [Grant Agreement No. 101139067](https://cordis.europa.eu/project/id/101139067). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union. Neither the European Union nor the granting authority can be held responsible for them.
 
 
 
