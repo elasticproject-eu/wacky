@@ -1,10 +1,11 @@
 ## Overview
 
-`wacky` is a tool for injecting shims via modifying wac scripts for the purpose of restricting/modifying access control to resources and services provided to the restricted or "untrusted components".
- The tool is built ontop of `wac` which is used for orchestrating and is a main stop point in the composition process of Wasm Component model.
- `wacky` is configurable, giving users control over the composition process and as a result the access control.
+`wacky` is a tool for injecting shims into WebAssembly by modifying the wac scripts that generate them, mainly in order to insert access control layers around untrusted components.
+ The tool is built on top of `wac`, which composes subcomponents into a single large component.
 
- ## Demonstrative examples
+This is a very early prototype and should not be used for critical tasks.
+
+## Examples
 
  The following is an example of a wac file used to compose two components together, 
 
@@ -190,7 +191,7 @@ The `wacky` tool has the following files:
 
 * `config.toml` - Contains the untrusted component along with the shimming parameters. An example file has been placed in root directory.
 * `compose.wac` - Original wac script file that we wish to investigate for untrusted components and shim if found.
-* `shimed_script.wac` - Output of `wacky` , produced after running the program. It contains the updated component links needed to inject the shim.
+* `shimmed_script.wac` - Output of `wacky` , produced after running the program. It contains the updated component links needed to inject the shim.
 
 This project also uses a fork of [wac](https://github.com/bytecodealliance/wac). 
 Specifically in the wac-parser crate , `printer.rs` has been changed for specific `wacky` use cases.
@@ -219,7 +220,7 @@ wacky/
 ```
 
 
-### 2. Second the desired state and access control restrictions are set by tunning the shimming parameters in the `config.toml` as follows:
+### 2. Second the desired state and access control restrictions are set by tuning the shimming parameters in the `config.toml` as follows:
 An example of untrusted Component along with the interface needed to shim and the shim component used for the job. 
 
 ````toml
