@@ -9,7 +9,7 @@
  The following is an example of a wac file used to compose two components together, 
 
 Before running `wacky`
-```
+```wit
 package example:composition;
 
 
@@ -23,13 +23,10 @@ let importer = new component:file {
 };
 
 export importer.run;
-
-
-
 ```
 After running `wacky` with configuartion of adding shim to "component:file", the above wac file becomes:
 
-```
+```wit
 package example:composition;
 // Instantiate the `exporter` component
 let exporter = new docs:writetwo { ... };
@@ -52,8 +49,8 @@ export importer.run;
  Example Two: Another example showing nested layers of wacky.
  Before running wacky:
 
- ```
- package example:composition;
+```wit
+package example:composition;
 
 let exporter = new component:trustedwriter {...};
 
@@ -74,7 +71,7 @@ export trustedcomponent.run;
 ```
 
 After running wacky:
-```
+```wit
 package example:composition;
 
 let exporter = new component:trustedwriter { ... };
@@ -102,7 +99,7 @@ export trustedcomponent.run;
 Third example to showcase wacky run on implicit interfaces:
 Before running wacky implicit case:
 
-```
+```wit
 package example:composition;
 
 
@@ -112,7 +109,7 @@ export untrustedcomponent.run;
 
 ```
 After running wacky implicit case:
-```
+```wit
 package example:composition;
 
 let untrustedcomponentimplicitshim1 = new shim:writershim { ... };
@@ -127,7 +124,7 @@ export untrustedcomponent.run;
 
 Fourth combined example:
 Before running wasi
-````
+```wit
 package example:composition;
 
 let exporter = new component:trustedwriter {...};
@@ -147,9 +144,9 @@ let trustedcomponent = new component:trustedwriter {
 };
 
 export trustedcomponent.run;
-`````
+```
 After running wacky on combined:
-````
+```wit
 package example:composition;
 
 let exporter = new component:trustedwriter { ... };
@@ -177,7 +174,7 @@ let trustedcomponent = new component:trustedwriter {
 };
 
 export trustedcomponent.run;
-````
+```
 
 
 A full example is already placed out when running wacky on compose.wac. 
@@ -302,10 +299,8 @@ The baseline is a two-component composition.
 | 10,000 calls | 1.14 ms | 1.18 ms | +3.1% (3.5 ns/call) |
 | 100,000 calls | 11.35 ms | 11.77 ms | +3.7% (4.2 ns/call) |
 
-## Security implications
-- `wacky` rewires an untrusted component's imports to a shim at composition time, without changing the component's binary or WIT.
-- Source code of shims is trusted.
-- Access control policy is static and fixed at the build time. Policy modification requires re-composition.
+## Security considerations
+`wacky` rewires an untrusted component's imports to a shim at composition time, without changing the component's code or otherwise affecting its interfaces.  It does not block all external interfaces in the same way as e.g. WASI Virt.  The shim itself must be trusted to incorporate any policies that might be desired.
 
 ## License
 This project is licensed under the [Apache 2.0 License](LICENSE)
